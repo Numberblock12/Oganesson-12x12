@@ -68,7 +68,7 @@ GameManager.prototype.addStartTiles = function () {
 // Adds a tile in a random position
 GameManager.prototype.addRandomTile = function () {
   if (this.grid.cellsAvailable()) {
-    var value = Math.random() < 0.9 ? 1 : 2;
+    var value = Math.random() < 0.7 ? 1 : Math.random() < 0.75 ? 2 : Math.random() < 0.84 ? 3 : Math.random() < 0.9 ? 4 : Math.random() < 0.99 ? 5 : Math.random() < 0.99999 ? 54 : 117;
     var tile = new Tile(this.grid.randomAvailableCell(), value);
 
     this.grid.insertTile(tile);
@@ -268,4 +268,3 @@ GameManager.prototype.tileMatchesAvailable = function () {
 };
 
 GameManager.prototype.positionsEqual = (first, second) => first.x === second.x && first.y === second.y;
-
